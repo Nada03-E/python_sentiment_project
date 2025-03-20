@@ -30,3 +30,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+#lancia main solo se uno fa partire il file direttamente, non se lo importa. 
+#cosa serve? se uno importa il file, non vuole che il programma parta, ma vuole solo usare le funzioni che ci sono dentro.
