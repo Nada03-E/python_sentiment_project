@@ -1,7 +1,7 @@
 import os
 import sys
 sys.path.append(os.path.abspath('..'))  # Adds the parent directory to sys.path
-
+#prova
 import logging
 from src import config
 from src.load_data import load_data
