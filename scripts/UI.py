@@ -5,10 +5,12 @@ from src import config  #streamlit run UI.py
 import streamlit as st
 import pickle
 
+print(f"Looking for model at: {config.MODELS_PATH}random_forest.plk")
+
 #load the model and vectorizer
-with open(f"{config.MODELS_PATH}random_forest.pickle", 'rb') as file:
+with open(f"{config.MODELS_PATH}random_forest.pkl", 'rb') as file:
     model = pickle.load(file)
-with open(f"{config.MODELS_PATH}vectorizer.pickle", 'rb') as file:
+with open(f"{config.MODELS_PATH}vectorizer.pkl", 'rb') as file:
     vectorizer = pickle.load(file)
 
 st.title("Sentiment Analysis App")

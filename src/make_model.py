@@ -65,13 +65,15 @@ def train_model(grid_search=False):
         y_pred = rf.predict(X_test)
 
     logging.info('saving model')
-    with open(os.path.join(config.MODELS_PATH, "random_forest.pkl"), 'wb') as file:
-        pickle.dump(rf, file)   
-
+#    with open(os.path.join(config.MODELS_PATH, "random_forest.pkl"), 'wb') as file:
+#        pickle.dump(rf, file)   
+    with open("../models/random_forest.pkl", 'wb') as file:
+        pickle.dump(rf, file)
     # Create a DataFrame for the test set with predictions
     test_df = df.loc[test_idx].copy()  # Copy test set rows
     test_df['prediction'] = y_pred  # Add predictions
 
+    
  
     
 
