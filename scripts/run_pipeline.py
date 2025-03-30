@@ -12,7 +12,7 @@ from src.make_model import train_model
 
 # Set up logging
 logging.basicConfig(filename='../logs/pipeline.log', level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-
+#prova
 def main():
     logging.info("Starting Sentiment Analysis Pipeline...")
 
