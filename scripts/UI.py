@@ -13,8 +13,8 @@ with open(f"{config.MODELS_PATH}random_forest.pkl", 'rb') as file:
     model1 = pickle.load(file)
 with open(f"{config.MODELS_PATH}logistic_regression.pkl", 'rb') as file:
     model2 = pickle.load(file)
-with open(f"{config.MODELS_PATH}naive_bayes.pkl", 'rb') as file:
-    model3 = pickle.load(file)
+#with open(f"{config.MODELS_PATH}naive_bayes.pkl", 'rb') as file:
+ #   model3 = pickle.load(file)
 with open(f"{config.MODELS_PATH}vectorizer.pkl", 'rb') as file:
     vectorizer = pickle.load(file)
 
