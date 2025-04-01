@@ -10,7 +10,7 @@ import os
 import sys
 import pickle
 sys.path.append(os.path.abspath('..'))  # Adds the parent directory to sys.path
-
+from sklearn import linear_model
 import logging
 # Set up logging
 
@@ -63,12 +63,27 @@ def train_model(grid_search=False):
         rf = RandomForestClassifier()
         rf.fit(X_train, y_train)
         y_pred = rf.predict(X_test)
+        
+    
+    # Logistic Regression for comparison    
+    logr = linear_model.LogisticRegression()
+    logr.fit(X,y)()
+    y_pred = rf.predict(X)
+    
+    # Nayve Bayes
+ #   NB=linear_model.GaussianNB()
+  #  NB.fit(X,y)()
+   # y_pred = rf.predict(X)
 
-    logging.info('saving model')
+    logging.info('saving models')
 #    with open(os.path.join(config.MODELS_PATH, "random_forest.pkl"), 'wb') as file:
 #        pickle.dump(rf, file)   
     with open("../models/random_forest.pkl", 'wb') as file:
         pickle.dump(rf, file)
+    with open("../models/logistic_regression.pkl", 'wb') as file:
+        pickle.dump(rf, file)
+#    with open("../models/Nayve_bayes.pkl", 'wb') as file:
+ #       pickle.dump(rf, file)
     # Create a DataFrame for the test set with predictions
     test_df = df.loc[test_idx].copy()  # Copy test set rows
     test_df['prediction'] = y_pred  # Add predictions
