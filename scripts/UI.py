@@ -1,7 +1,7 @@
 import os
 import sys
 sys.path.append(os.path.abspath('..'))
-from src import config  #streamlit run UI.py
+from src import config  #streamlit run UI.py   python -m streamlit run UI.py
 import streamlit as st
 import pickle
 import streamlit as st
