@@ -11,6 +11,7 @@ import sys
 import pickle
 sys.path.append(os.path.abspath('..'))  # Adds the parent directory to sys.path
 from sklearn import linear_model
+from sklearn.linear_model import LogisticRegression
 import logging
 # Set up logging
 
@@ -26,7 +27,7 @@ def load_data():
 
 def train_model(grid_search=False):
     """Trains a Random Forest model with GridSearchCV and saves evaluation metrics to CSV."""
-    df = load_data().head(100)
+    df = load_data().head(1000)
 
     # Save original indices before vectorization
     df_indices = df.index
@@ -66,9 +67,9 @@ def train_model(grid_search=False):
         
     
     # Logistic Regression for comparison    
-    logr = linear_model.LogisticRegression()
-    logr.fit(X,y)()
-    y_pred = rf.predict(X)
+    logr = LogisticRegression()
+    logr.fit(X_train, y_train)
+    y_pred = logr.predict(X_test)
     
     # Nayve Bayes
  #   NB=linear_model.GaussianNB()
